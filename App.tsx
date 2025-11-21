@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import BackgroundCanvas from './components/BackgroundCanvas';
 import ModelCard from './components/ModelCard';
@@ -197,7 +198,7 @@ const App: React.FC = () => {
                 Last Updated: November 2025 | Data compiled from official technical reports and API documentation.
             </p>
             <p className="text-gray-600 text-xs mt-2">
-                Pricing estimates may vary by region and usage volume.
+                Pricing estimates may vary by region and usage volume. | <span className="text-gray-500">Data Version: v2025.2 (Expanded)</span>
             </p>
         </div>
       </footer>

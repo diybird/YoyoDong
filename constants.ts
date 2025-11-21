@@ -58,6 +58,58 @@ export const MODELS: ModelData[] = [
     tags: ['reasoning', 'assistant', 'multimodal'],
     link: 'https://openai.com'
   },
+  {
+    id: 'claude-3-5-opus',
+    name: 'Claude 3.5 Opus',
+    developer: 'Anthropic',
+    releaseDate: '2025-06',
+    category: 'Multimodal',
+    price: '$20/mo',
+    apiPrice: '$15.00 / 1M',
+    description: 'Unmatched nuance and creative writing capabilities. Features a massive 500k context window and improved artifact generation.',
+    features: ['Nuance', 'Creative Writing', 'Large Context', 'Coding'],
+    tags: ['creative', 'writing', 'multimodal'],
+    link: 'https://anthropic.com'
+  },
+  {
+    id: 'llama-4-405b',
+    name: 'Llama 4 405B',
+    developer: 'Meta',
+    releaseDate: '2025-07',
+    category: 'Multimodal',
+    price: 'Open Source',
+    apiPrice: 'Free (Self-hosted)',
+    description: 'The state-of-the-art open weights model. Capable of complex reasoning and multilingual translation rivaling closed source models.',
+    features: ['Open Source', 'Multilingual', 'Self-hostable', 'Reasoning'],
+    tags: ['open-source', 'meta', 'multimodal'],
+    link: 'https://llama.meta.com'
+  },
+  {
+    id: 'grok-3',
+    name: 'Grok 3',
+    developer: 'xAI',
+    releaseDate: '2025-08',
+    category: 'Multimodal',
+    price: '$16/mo',
+    apiPrice: 'N/A',
+    description: 'Real-time access to X (Twitter) data with reduced guardrails and a witty personality. Strong coding and math benchmarks.',
+    features: ['Real-time Data', 'Uncensored', 'Coding', 'Wit'],
+    tags: ['social', 'real-time', 'multimodal'],
+    link: 'https://x.ai'
+  },
+  {
+    id: 'mistral-large-2',
+    name: 'Mistral Large 2',
+    developer: 'Mistral AI',
+    releaseDate: '2025-07',
+    category: 'Multimodal',
+    price: 'Paid API',
+    apiPrice: 'Usage Based',
+    description: 'Europe’s flagship model. exceptional coding performance and multilingual capabilities with a focus on efficiency.',
+    features: ['Coding', 'Multilingual', 'Efficient', 'Function Calling'],
+    tags: ['coding', 'european', 'multimodal'],
+    link: 'https://mistral.ai'
+  },
 
   // --- IMAGE ---
   {
@@ -128,6 +180,45 @@ export const MODELS: ModelData[] = [
     tags: ['professional', 'precise', 'editing'],
     link: 'https://blackforestlabs.ai'
   },
+  {
+    id: 'dall-e-4',
+    name: 'DALL-E 4',
+    developer: 'OpenAI',
+    releaseDate: '2025-09',
+    category: 'Image',
+    price: '$20/mo',
+    apiPrice: '$0.04 / img',
+    description: 'Perfect instruction following and native text rendering. deeply integrated into ChatGPT for iterative editing.',
+    features: ['Iterative Editing', 'Text Rendering', 'Simple Prompting', 'Chat Integration'],
+    tags: ['easy', 'chat', 'text'],
+    link: 'https://openai.com/dall-e-4'
+  },
+  {
+    id: 'sd-3-5-large',
+    name: 'Stable Diffusion 3.5',
+    developer: 'Stability AI',
+    releaseDate: '2024-12',
+    category: 'Image',
+    price: 'Open Weights',
+    apiPrice: 'Self-hosted',
+    description: 'The most capable open model for photorealism and typography. Highly optimizable and runnable on consumer hardware.',
+    features: ['Open Weights', 'Typography', 'Photorealism', 'Fine-tunable'],
+    tags: ['open-source', 'stable-diffusion', 'local'],
+    link: 'https://stability.ai'
+  },
+  {
+    id: 'leonardo-phoenix-2',
+    name: 'Leonardo Phoenix 2',
+    developer: 'Leonardo.ai',
+    releaseDate: '2025-03',
+    category: 'Image',
+    price: 'Freemium',
+    apiPrice: 'N/A',
+    description: 'Game asset focused generation with transparency support and 3D texture map estimation.',
+    features: ['Game Assets', 'Transparency', 'Texture Maps', 'Style Consistent'],
+    tags: ['game-dev', 'assets', 'art'],
+    link: 'https://leonardo.ai'
+  },
 
   // --- VIDEO ---
   {
@@ -184,6 +275,59 @@ export const MODELS: ModelData[] = [
     tags: ['professional', 'editing', 'control'],
     link: 'https://runwayml.com'
   },
+  {
+    id: 'hailuo-video',
+    name: 'Hailuo Video (MiniMax)',
+    developer: 'MiniMax',
+    releaseDate: '2024-12',
+    category: 'Video',
+    price: 'Free (Beta)',
+    apiPrice: 'N/A',
+    description: 'Impressive character movement and temporal consistency. Known for high quality human animation.',
+    features: ['Character Motion', 'High FPS', 'Consistency', 'Human Animation'],
+    tags: ['animation', 'character', 'video'],
+    link: 'https://hailuo.ai'
+  },
+  {
+    id: 'kling-1.5',
+    name: 'Kling 1.5',
+    developer: 'Kuaishou',
+    releaseDate: '2024-12',
+    category: 'Video',
+    price: 'Credits',
+    apiPrice: 'N/A',
+    description: 'Capable of generating 2-minute videos at 1080p/60fps. Excellent physics simulation for complex scenes.',
+    features: ['2 Minute Duration', '1080p 60fps', 'Physics', 'Long Form'],
+    badge: 'Long Form',
+    tags: ['long-video', 'physics', 'high-fps'],
+    link: 'https://kling.kuaishou.com'
+  },
+  {
+    id: 'luma-dream-machine-2',
+    name: 'Luma Dream Machine 2',
+    developer: 'Luma AI',
+    releaseDate: '2025-01',
+    category: 'Video',
+    price: 'Freemium',
+    apiPrice: 'Usage Based',
+    description: 'Fast, high-quality video generation with keyframe control and loop creation tools.',
+    features: ['Keyframes', 'Looping', 'Fast Gen', 'Image-to-Video'],
+    tags: ['fast', 'loop', 'creative'],
+    link: 'https://lumalabs.ai'
+  },
+  {
+    id: 'pika-2-0',
+    name: 'Pika 2.0',
+    developer: 'Pika Labs',
+    releaseDate: '2025-02',
+    category: 'Video',
+    price: 'Freemium',
+    apiPrice: 'N/A',
+    description: 'Specialized in anime and stylized animation with granular lip-sync and modify region tools.',
+    features: ['Lip Sync', 'Modify Region', 'Anime Style', 'Sound Effects'],
+    tags: ['anime', 'style', 'animation'],
+    link: 'https://pika.art'
+  },
 
   // --- AUDIO ---
   {
@@ -239,5 +383,31 @@ export const MODELS: ModelData[] = [
     features: ['Vocal Synthesis', 'Instrumentals', 'Commercial Use', 'High Fidelity'],
     tags: ['vocals', 'sfx', 'production'],
     link: 'https://elevenlabs.io'
+  },
+  {
+    id: 'udio-v2',
+    name: 'Udio v2',
+    developer: 'Udio',
+    releaseDate: '2025-05',
+    category: 'Audio',
+    price: 'Freemium',
+    apiPrice: 'N/A',
+    description: 'Complex musical composition with high structural coherence. Excellent for electronic and classical genres.',
+    features: ['Composition', 'Structure', 'Remixing', 'Extend Track'],
+    tags: ['composition', 'music', 'electronic'],
+    link: 'https://udio.com'
+  },
+  {
+    id: 'stable-audio-2',
+    name: 'Stable Audio 2',
+    developer: 'Stability AI',
+    releaseDate: '2024-04',
+    category: 'Audio',
+    price: 'Freemium',
+    apiPrice: 'Usage Based',
+    description: 'Generates full tracks up to 3 minutes with coherent structure. Strong sound effect generation.',
+    features: ['Sound Effects', '3 Min Tracks', 'Structure', 'Audio-to-Audio'],
+    tags: ['sfx', 'background', 'music'],
+    link: 'https://stability.ai'
   }
 ];
