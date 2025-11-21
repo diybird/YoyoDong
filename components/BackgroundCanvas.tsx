@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const BackgroundCanvas: React.FC = () => {
@@ -11,34 +10,47 @@ const BackgroundCanvas: React.FC = () => {
     if (!ctx) return;
 
     let width = window.innerWidth;
-    let height = document.documentElement.scrollHeight;
+    let height = window.innerHeight;
     let mouseX = -1000;
     let mouseY = -1000;
 
     const handleResize = () => {
-      if (canvas) {
+      if (canvas && ctx) {
         width = window.innerWidth;
-        height = Math.max(window.innerHeight, document.documentElement.scrollHeight);
-        canvas.width = width;
-        canvas.height = height;
+        height = window.innerHeight;
+        
+        // High DPI support
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        
+        // Scale context to match DPI
+        ctx.scale(dpr, dpr);
+        
+        // Style dimensions (CSS pixels)
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
       }
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
-      mouseY = e.clientY + window.scrollY;
+      mouseY = e.clientY;
     };
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
+    
+    // Initial setup
     handleResize();
 
-    const dotSpacing = 30;
-    const baseDotSize = 1.5;
-    const interactiveRadius = 80; // Requested radius
+    const dotSpacing = 25; // Slightly denser
+    const baseDotSize = 1.5; // Base size
+    const interactiveRadius = 120;
     const baseColor = '102, 126, 234'; // RGB values
 
     const animate = () => {
+      // Clear using logical dimensions (context is scaled)
       ctx.clearRect(0, 0, width, height);
 
       for (let x = 0; x < width; x += dotSpacing) {
@@ -47,17 +59,14 @@ const BackgroundCanvas: React.FC = () => {
           const dy = y - mouseY;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          let alpha = 0.15; 
+          let alpha = 0.2; // Increased base visibility from 0.15
           let currentSize = baseDotSize;
 
           // Interaction logic: dots grow within radius
           if (distance < interactiveRadius) {
-            // Calculate scale factor: 0 at radius edge, 1 at center
             const factor = 1 - (distance / interactiveRadius);
-            // Scale up to 4x original size smoothly
-            currentSize = baseDotSize + (baseDotSize * 3 * factor);
-            // Slightly increase opacity for the active dots
-            alpha = 0.15 + (factor * 0.4);
+            currentSize = baseDotSize + (baseDotSize * 2.5 * factor);
+            alpha = 0.2 + (factor * 0.4);
           }
 
           ctx.fillStyle = `rgba(${baseColor}, ${alpha})`;
@@ -81,7 +90,7 @@ const BackgroundCanvas: React.FC = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
     />
   );
 };
